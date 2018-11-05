@@ -9,7 +9,7 @@ Simple, easy and fast log library for Golang
     package main
 
     import (
-        log "gitlab.fg0.top/knowlittle/fastlog"
+        log "github.com/go-fastlog/fastlog"
         "os"
     )
 
@@ -25,7 +25,7 @@ Simple, easy and fast log library for Golang
     package main
 
     import (
-        log "gitlab.fg0.top/knowlittle/fastlog"
+        log "github.com/go-fastlog/fastlog"
         "os"
     )
 
@@ -79,7 +79,7 @@ Simple, easy and fast log library for Golang
     import (
             "os"
 
-            log "gitlab.fg0.top/knowlittle/fastlog"
+            log "github.com/go-fastlog/fastlog"
     )
 
     func main() {
@@ -123,7 +123,7 @@ Simple, easy and fast log library for Golang
     import (
             "os"
 
-            log "gitlab.fg0.top/knowlittle/fastlog"
+            log "github.com/go-fastlog/fastlog"
     )
 
     func main() {
@@ -131,3 +131,4 @@ Simple, easy and fast log library for Golang
             log.Debug("this is debug msg")  //不会再被打印
             log.Info("xxx")  // 打印 xxx 
     }
+
