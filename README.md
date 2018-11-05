@@ -89,7 +89,7 @@ Simple, easy and fast log library for Golang
             }
 
 
-            log.SetFlag(log.Ldebug)   //设置默认的日志显示级别，不设置所有级别的日志都会被输出，并且不显示日志级别（为了和官方log包保持一致）
+            log.SetFlag(log.Flags()|log.Ldebug)   //设置默认的日志显示级别，不设置所有级别的日志都会被输出，并且不显示日志级别（为了和官方log包保持一致）
 
             // 修改默认的日志输出对象
             log.SetOutput(outFile)
@@ -127,7 +127,7 @@ Simple, easy and fast log library for Golang
     )
 
     func main() {
-            log.SetFlag(log.LstdFlags | log.Linfo)   //设置问默认的日志个时间格式，日志级别为info, 低于info级别的日志如(debug) 将不再被打印
+            log.SetFlag(log.Flags()  | log.Linfo)   //设置问默认的日志个时间格式，日志级别为info, 低于info级别的日志如(debug) 将不再被打印
             log.Debug("this is debug msg")  //不会再被打印
             log.Info("xxx")  // 打印 xxx 
     }
