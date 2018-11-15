@@ -21,6 +21,7 @@ const (
 	Lwarn
 	Lerror
 	Lpanic
+	Ltrace
 	LstdFlags = Ldate | Ltime | Llongfile // initial values for the standard logger
 
 )
@@ -106,6 +107,8 @@ func (l *Logger) formatHeader(buf *[]byte, t time.Time, file string, line int, l
 			*buf = append(*buf, []byte(" ERROR ")...)
 		case Lpanic:
 			*buf = append(*buf, []byte(" PANIC ")...)
+		case Ltrace:
+			*buf = append(*buf, []byte(" TRACE ")...)
 		default:
 			*buf = append(*buf, []byte(" UNKNOWN ")...)
 		}
@@ -135,7 +138,7 @@ func (l *Logger) Output(calldepth int, level int, s string) error {
 	var line int
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	if l.flag&(Ldebug|Linfo|Lwarn|Lerror|Lpanic) != 0 {
+	if l.flag&(Ldebug|Linfo|Lwarn|Lerror|Lpanic|Ltrace) != 0 {
 		if l.flag&Linfo != 0 && level < Linfo {
 			return nil
 		} else if l.flag&Lwarn != 0 && level < Lwarn {
@@ -143,6 +146,8 @@ func (l *Logger) Output(calldepth int, level int, s string) error {
 		} else if l.flag&Lerror != 0 && level < Lerror {
 			return nil
 		} else if l.flag&Lpanic != 0 && level < Lpanic {
+			return nil
+		} else if l.flag&Ltrace != 0 && level < Ltrace {
 			return nil
 		}
 	}
@@ -407,6 +412,18 @@ func Errorf(format string, v ...interface{}) {
 
 func Errorln(v ...interface{}) {
 	std.Output(2, Lerror, fmt.Sprintln(v...))
+}
+
+func Trace(v ...interface{}) {
+	std.Output(2, Ltrace, fmt.Sprint(v...))
+}
+
+func Tracef(format string, v ...interface{}) {
+	std.Output(2, Ltrace, fmt.Sprintf(format, v...))
+}
+
+func Traceln(v ...interface{}) {
+	std.Output(2, Ltrace, fmt.Sprintln(v...))
 }
 
 // Panic is equivalent to Print() followed by a call to panic().
