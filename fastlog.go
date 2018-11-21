@@ -366,6 +366,18 @@ func (l *Logger) Errorln(v ...interface{}) {
 	l.Output(2, Lerror, fmt.Sprintln(v...))
 }
 
+func (l *Logger) Trace(v ...interface{}) {
+	l.Output(2, Ltrace, fmt.Sprint(v...))
+}
+
+func (l *Logger) Tracef(format string, v ...interface{}) {
+	l.Output(2, Ltrace, fmt.Sprintf(format, v...))
+}
+
+func (l *Logger) Traceln(v ...interface{}) {
+	l.Output(2, Ltrace, fmt.Sprintln(v...))
+}
+
 func Debug(v ...interface{}) {
 	std.Output(2, Ldebug, fmt.Sprint(v...))
 }
