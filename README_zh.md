@@ -1,9 +1,6 @@
 # fastlog
 Simple, easy and fast log library for Golang
 
-[简体中文](README_zh.md)
-[正體中文](README_zh_hant.md)
-
 只有一个文件，可简单引入项目，速度快轻量级.基于官方log库做的二次开发
 
 # 与Golang log库完全兼容,可以直接替换

@@ -1,12 +1,9 @@
 # fastlog
 Simple, easy and fast log library for Golang
 
-[简体中文](README_zh.md)
-[正體中文](README_zh_hant.md)
+只有壹個文件，可簡單引入項目，速度快輕量級.基於官方log庫做的二次開發
 
-只有一个文件，可简单引入项目，速度快轻量级.基于官方log库做的二次开发
-
-# 与Golang log库完全兼容,可以直接替换
+# 與Golang log庫完全兼容,可以直接替換
 
 例子:
     package main
@@ -33,38 +30,38 @@ Simple, easy and fast log library for Golang
     )
 
     func main() {
-        // 新建一个logger
+        // 新建壹個logger
         logger := log.New(os.Stderr, "prefix", log.LstdFlags|log.Ldebug)
 
 
 
 
-        // 打印一条调试日志 日志级别 `DEBUG`
+        // 打印壹條調試日誌 日誌級別 `DEBUG`
         logger.Debug("This is debug msg (Debug)")
         logger.Debugln("This is debug msg (Debugln) ")
         logger.Debugf("This is debug number %d", 2233)
 
-        // 打印一条一般日志 日志级别 `INFO`
+        // 打印壹條壹般日誌 日誌級別 `INFO`
         logger.Info("this is Info msg (Info)")
         logger.Infoln("this is Info msg (Infoln)")
         logger.Infof("%s %d","this is a Info number")
 
-        // 打印一条警告日志   日志级别 `WARN`
+        // 打印壹條警告日誌   日誌級別 `WARN`
         logger.Warn("...")
         logger.Warnln("...")
         logger.Warnf("...")
 
-        // 打印一条错误日志  日志级别 `ERROR`
+        // 打印壹條錯誤日誌  日誌級別 `ERROR`
         logger.Error("...")
         logger.Errorln("...")
         logger.Errorf("...")
 
-        // 记录日志并抛出一个panic  日志级别 `PANIC` 
+        // 記錄日誌並拋出壹個panic  日誌級別 `PANIC`
         logger.Panic("...")
         logger.Patnicln("...")
         logger.Patnicf("...")
 
-        // 记录一个错误日志并退出整个程序 日志级别 `ERROR`
+        // 記錄壹個錯誤日誌並退出整個程序 日誌級別 `ERROR`
         logger.Fatal("...")
         logger.Fataln("...")
         logger.Fatalf("...")
@@ -72,9 +69,9 @@ Simple, easy and fast log library for Golang
 
 
 
-# 修改默认的日志输出
+# 修改默認的日誌輸出
 
-日志默认输出到`os.Stderr` ,可以使用 SetOutput 修改默认的输出对象
+日誌默認輸出到`os.Stderr` ,可以使用 SetOutput 修改默認的輸出對象
 
 
     package main
@@ -92,19 +89,19 @@ Simple, easy and fast log library for Golang
             }
 
 
-            log.SetFlag(log.Flags()|log.Ldebug)   //设置默认的日志显示级别，不设置所有级别的日志都会被输出，并且不显示日志级别（为了和官方log包保持一致）
+            log.SetFlag(log.Flags()|log.Ldebug)   //設置默認的日誌顯示級別，不設置所有級別的日誌都會被輸出，並且不顯示日誌級別（為了和官方log包保持壹致）
 
-            // 修改默认的日志输出对象
+            // 修改默認的日誌輸出對象
             log.SetOutput(outFile)
 
             log.Info("xxx")
     }
 
 
-# 日志级别以及Flag的修改
+# 日誌級別以及Flag的修改
 
     const (
-        Ldate         = 1 << iota // the date in the local time zone: 2009/01/23  
+        Ldate         = 1 << iota // the date in the local time zone: 2009/01/23
         Ltime                     // the time in the local time zone: 01:23:23
         Lmicroseconds             // microsecond resolution: 01:23:23.123123.  assumes Ltime.
         Llongfile                 // full file name and line number: /a/b/c/d.go:23
@@ -119,7 +116,7 @@ Simple, easy and fast log library for Golang
 
     )
 
-默认情况下，所有级别的输出都会被打印，并且不显示日志的级别（目的是尽量和标准log包保持一致，如果你希望显示日志级别可通过以下方式设置）
+默認情況下，所有級別的輸出都會被打印，並且不顯示日誌的級別（目的是盡量和標準log包保持壹致，如果妳希望顯示日誌級別可通過以下方式設置）
 
     package main
 
@@ -130,8 +127,9 @@ Simple, easy and fast log library for Golang
     )
 
     func main() {
-            log.SetFlag(log.Flags()  | log.Linfo)   //设置问默认的日志个时间格式，日志级别为info, 低于info级别的日志如(debug) 将不再被打印
-            log.Debug("this is debug msg")  //不会再被打印
-            log.Info("xxx")  // 打印 xxx 
+            log.SetFlag(log.Flags()  | log.Linfo)   //設置問默認的日誌個時間格式，日誌級別為info, 低於info級別的日誌如(debug) 將不再被打印
+            log.Debug("this is debug msg")  //不會再被打印
+            log.Info("xxx")  // 打印 xxx
     }
+
 
