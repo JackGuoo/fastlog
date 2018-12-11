@@ -5,6 +5,8 @@ Simple, easy and fast log library for Golang
 
 - [正體中文](README_zh_hant.md)
 
+- [Document](https://godoc.org/github.com/go-fastlog/fastlog)
+
 Only one file, can be easily introduced into the project, fast and lightweight. Secondary development based on the official log library
 
 # Fully compatible with the Golang log library, it is easy to replace the official log package
