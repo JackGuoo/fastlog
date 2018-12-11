@@ -318,122 +318,182 @@ func Fatalln(v ...interface{}) {
 	os.Exit(1)
 }
 
+// Debug calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Debug(v ...interface{}) {
 	l.Output(2, Ldebug, fmt.Sprint(v...))
 }
 
+// Debugf calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Debugf(format string, v ...interface{}) {
 	l.Output(2, Ldebug, fmt.Sprintf(format, v...))
 }
 
+// Debugln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Debugln(v ...interface{}) {
 	l.Output(2, Ldebug, fmt.Sprintln(v...))
 }
 
+// Info calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Info(v ...interface{}) {
 	l.Output(2, Linfo, fmt.Sprint(v...))
 }
 
+// Infof calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Infof(format string, v ...interface{}) {
 	l.Output(2, Linfo, fmt.Sprintf(format, v...))
 }
 
+// Infoln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Infoln(v ...interface{}) {
 	l.Output(2, Linfo, fmt.Sprintln(v...))
 }
 
+// Warn calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Warn(v ...interface{}) {
 	l.Output(2, Lwarn, fmt.Sprint(v...))
 }
 
+// Warnf calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Warnf(format string, v ...interface{}) {
 	l.Output(2, Lwarn, fmt.Sprintf(format, v...))
 }
 
+// Warnln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Warnln(v ...interface{}) {
 	l.Output(2, Lwarn, fmt.Sprintln(v...))
 }
 
+// Error calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Error(v ...interface{}) {
 	l.Output(2, Lerror, fmt.Sprint(v...))
 }
 
+// Errorf calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Errorf(format string, v ...interface{}) {
 	l.Output(2, Lerror, fmt.Sprintf(format, v...))
 }
 
+// Errorln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Errorln(v ...interface{}) {
 	l.Output(2, Lerror, fmt.Sprintln(v...))
 }
 
+// Trace calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Trace(v ...interface{}) {
 	l.Output(2, Ltrace, fmt.Sprint(v...))
 }
 
+// Tracef calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Tracef(format string, v ...interface{}) {
 	l.Output(2, Ltrace, fmt.Sprintf(format, v...))
 }
 
+// Traceln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func (l *Logger) Traceln(v ...interface{}) {
 	l.Output(2, Ltrace, fmt.Sprintln(v...))
 }
 
+// Debug calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Debug(v ...interface{}) {
 	std.Output(2, Ldebug, fmt.Sprint(v...))
 }
 
+// Debugf calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Debugf(format string, v ...interface{}) {
 	std.Output(2, Ldebug, fmt.Sprintf(format, v...))
 }
 
+// Debugln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Debugln(v ...interface{}) {
 	std.Output(2, Ldebug, fmt.Sprintln(v...))
 }
 
+// Info calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Info(v ...interface{}) {
 	std.Output(2, Linfo, fmt.Sprint(v...))
 }
 
+// Infof calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Infof(format string, v ...interface{}) {
 	std.Output(2, Linfo, fmt.Sprintf(format, v...))
 }
 
+// Infoln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Infoln(v ...interface{}) {
 	std.Output(2, Linfo, fmt.Sprintln(v...))
 }
 
+// Warn calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Warn(v ...interface{}) {
 	std.Output(2, Lwarn, fmt.Sprint(v...))
 }
 
+// Warnf calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Warnf(format string, v ...interface{}) {
 	std.Output(2, Lwarn, fmt.Sprintf(format, v...))
 }
 
+// Warnln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Warnln(v ...interface{}) {
 	std.Output(2, Lwarn, fmt.Sprintln(v...))
 }
 
+// Error calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Error(v ...interface{}) {
 	std.Output(2, Lerror, fmt.Sprint(v...))
 }
 
+// Errorf calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Errorf(format string, v ...interface{}) {
 	std.Output(2, Lerror, fmt.Sprintf(format, v...))
 }
 
+// Errorln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Errorln(v ...interface{}) {
 	std.Output(2, Lerror, fmt.Sprintln(v...))
 }
 
+// Trace calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Trace(v ...interface{}) {
 	std.Output(2, Ltrace, fmt.Sprint(v...))
 }
 
+// Tracef calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Tracef(format string, v ...interface{}) {
 	std.Output(2, Ltrace, fmt.Sprintf(format, v...))
 }
 
+// Traceln calls Output to print to the standard logger.
+// Arguments are handled in the manner of fmt.Printf.
 func Traceln(v ...interface{}) {
 	std.Output(2, Ltrace, fmt.Sprintln(v...))
 }
